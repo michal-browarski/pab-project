@@ -9,5 +9,8 @@
 		public string? StreetName { get; set; }
 		public string? StreetNumber { get; set; }
 		public string HomeNumber { get; set; }
+
+		public int UserId { get; set; }
+		public User User { get; set; } = null!;
 	}
 }

@@ -7,6 +7,11 @@
 		public OrderStatus Status { get; set; }
 		public DateTime ShippingDate { get; set; }
 		public string? Annotations { get; set; }
+
+		public int UserId { get; set; }
+		public User User { get; set; } = null!;
+
+		public List<OrderItem> OrderItems { get; set; } = new();
 	}
 
 	public enum OrderStatus

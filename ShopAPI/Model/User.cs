@@ -9,6 +9,10 @@
 		public DateTime CreationDateTime { get; set; }
 		public bool IsActive { get; set; }
 		public UserRole Role { get; set; }
+
+		public PersonalInfo? PersonalInfo { get; set; }
+		public AdressInfo? AdressInfo { get; set; }
+		public List<Order> OrderList { get; set; } = new();
 	}
 
 	public enum UserRole
