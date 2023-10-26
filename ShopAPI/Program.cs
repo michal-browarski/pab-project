@@ -21,6 +21,13 @@ namespace ShopAPI
 
 			var app = builder.Build();
 
+			using (var scope = app.Services.CreateScope())
+			{
+				var services = scope.ServiceProvider;
+				var context = services.GetRequiredService<ShopContext>();
+				context.Database.EnsureCreated(); // This will create the database and apply migrations if necessary
+			}
+
 			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
 			{
